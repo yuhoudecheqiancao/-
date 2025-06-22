@@ -1,0 +1,475 @@
+/* 动画样式文件 */
+
+/* 关键帧动画定义 */
+
+/* 旋转动画 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 弹跳动画 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 从下方滑入 */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 从左侧滑入 */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 从右侧滑入 */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 缩放动画 */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 摇摆动画 */
+@keyframes wobble {
+    0% { transform: translateX(0%); }
+    15% { transform: translateX(-25px) rotate(-5deg); }
+    30% { transform: translateX(20px) rotate(3deg); }
+    45% { transform: translateX(-15px) rotate(-3deg); }
+    60% { transform: translateX(10px) rotate(2deg); }
+    75% { transform: translateX(-5px) rotate(-1deg); }
+    100% { transform: translateX(0%); }
+}
+
+/* 脉冲动画 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+/* 闪烁动画 */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* 摇摆铃铛动画 */
+@keyframes ring {
+    0% { transform: rotate(0); }
+    1% { transform: rotate(30deg); }
+    3% { transform: rotate(-28deg); }
+    5% { transform: rotate(34deg); }
+    7% { transform: rotate(-32deg); }
+    9% { transform: rotate(30deg); }
+    11% { transform: rotate(-28deg); }
+    13% { transform: rotate(26deg); }
+    15% { transform: rotate(-24deg); }
+    17% { transform: rotate(22deg); }
+    19% { transform: rotate(-20deg); }
+    21% { transform: rotate(18deg); }
+    23% { transform: rotate(-16deg); }
+    25% { transform: rotate(14deg); }
+    27% { transform: rotate(-12deg); }
+    29% { transform: rotate(10deg); }
+    31% { transform: rotate(-8deg); }
+    33% { transform: rotate(6deg); }
+    35% { transform: rotate(-4deg); }
+    37% { transform: rotate(2deg); }
+    39% { transform: rotate(-1deg); }
+    41% { transform: rotate(1deg); }
+    43% { transform: rotate(0); }
+    100% { transform: rotate(0); }
+}
+
+/* 彩虹渐变动画 */
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 浮动动画 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 应用动画的类 */
+
+/* 页面加载动画 */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.zoom-in {
+    animation: zoomIn 0.4s ease-out;
+}
+
+/* 交互动画 */
+.wobble-on-hover:hover {
+    animation: wobble 0.8s ease-in-out;
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+.blink-animation {
+    animation: blink 1s infinite;
+}
+
+/* 通知和提示动画 */
+.notification-enter {
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification-exit {
+    animation: slideInRight 0.3s ease-out reverse;
+}
+
+/* 转盘特殊动画 */
+.wheel-idle {
+    animation: float 4s ease-in-out infinite;
+}
+
+.wheel-highlight {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 按钮动画增强 */
+.button-press {
+    animation: zoomIn 0.1s ease-out;
+}
+
+.button-success {
+    animation: pulse 0.6s ease-out;
+}
+
+/* 模态框动画 */
+.modal-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-scale-in {
+    animation: zoomIn 0.3s ease-out;
+}
+
+/* 列表项动画 */
+.list-item-enter {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+/* 错误和成功提示动画 */
+.error-shake {
+    animation: wobble 0.5s ease-in-out;
+}
+
+.success-bounce {
+    animation: bounce 0.6s ease-in-out;
+}
+
+/* 时间段切换通知 */
+.time-slot-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1500;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-out;
+}
+
+.time-slot-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-left: 4px solid var(--primary-color);
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+}
+
+.notification-text {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* 快捷提示动画 */
+.quick-tip {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1400;
+    transition: transform 0.3s ease-out;
+}
+
+.quick-tip.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* 网络状态提示 */
+.network-status {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1600;
+    transition: transform 0.3s ease-out;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.network-status.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+.network-status.online {
+    background: rgba(81, 207, 102, 0.9);
+    color: white;
+}
+
+.network-status.offline {
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+}
+
+/* 错误消息动画 */
+.error-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    z-index: 2000;
+    transition: all 0.3s ease-out;
+}
+
+.error-message.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.error-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border-left: 4px solid var(--danger-color);
+}
+
+.error-icon {
+    font-size: 1.3rem;
+}
+
+.error-text {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* 特殊效果动画 */
+.sparkle {
+    position: relative;
+    overflow: hidden;
+}
+
+.sparkle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* 转盘旋转增强效果 */
+.wheel-spinning {
+    position: relative;
+}
+
+.wheel-spinning::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: conic-gradient(
+        transparent,
+        rgba(255, 107, 107, 0.3),
+        transparent
+    );
+    animation: spin 0.5s linear infinite;
+    z-index: -1;
+}
+
+/* 响应式动画调整 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 移动端优化动画 */
+@media (max-width: 768px) {
+    .time-slot-notification {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+        right: auto;
+        transform: translateY(-100%);
+    }
+    
+    .time-slot-notification.show {
+        transform: translateY(0);
+    }
+    
+    .quick-tip {
+        bottom: 20px;
+        left: 15px;
+        right: 15px;
+        transform: translateY(100%);
+    }
+    
+    .quick-tip.show {
+        transform: translateY(0);
+    }
+}
+
+/* 深色模式动画（预留） */
+@media (prefers-color-scheme: dark) {
+    .notification-content,
+    .error-content {
+        background: #2c3e50;
+        color: white;
+    }
+} 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吃什么？</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">🍽️ 吃什么？</h1>
+            <p class="app-subtitle" id="greeting">让我来帮你决定今天吃什么吧！</p>
+            <div class="time-indicator" id="timeIndicator">
+                <span id="currentTime"></span>
+                <span id="timeSlot"></span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- 简化的抽奖区域 -->
+            <div class="lottery-container">
+                <div class="simple-lottery">
+                    <div class="lottery-display" id="lotteryDisplay">
+                        <div class="display-emoji" id="displayEmoji">🎲</div>
+                        <div class="display-text" id="displayText">点击按钮开始抽奖</div>
+                    </div>
+                </div>
+                
+                <button class="lottery-button" id="lotteryButton" aria-label="开始抽奖">
+                    <span class="button-text">🎲 开始抽奖</span>
+                    <div class="button-ripple"></div>
+                </button>
+            </div>
+
+            <!-- 结果显示区域 -->
+            <div class="result-container" id="resultContainer">
+                <div class="result-card" id="resultCard">
+                    <div class="result-emoji" id="resultEmoji">🎉</div>
+                    <h2 class="result-title">今天就吃</h2>
+                    <div class="result-food" id="resultFood">等待抽奖...</div>
+                    <p class="result-description" id="resultDescription">点击上方按钮开始抽奖吧！</p>
+                    <button class="retry-button" id="retryButton" style="display: none;">
+                        🎯 再来一次
+                    </button>
+                </div>
+            </div>
+
+            <!-- 功能按钮区域 -->
+            <div class="action-buttons">
+                <button class="action-btn" id="changeTimeSlot" title="切换时间段">
+                    ⏰ 切换时段
+                </button>
+                <button class="action-btn" id="showHistory" title="查看历史记录">
+                    📝 历史记录
+                </button>
+                <button class="action-btn" id="addCustomFood" title="添加自定义食物">
+                    ➕ 自定义
+                </button>
+            </div>
+        </main>
+
+        <!-- 历史记录弹窗 -->
+        <div class="modal" id="historyModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>📝 抽奖历史</h3>
+                    <button class="modal-close" id="closeHistoryModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="history-list" id="historyList">
+                        <p class="empty-history">还没有抽奖记录哦～</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
+
+        <!-- 自定义食物弹窗 -->
+        <div class="modal" id="customFoodModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>➕ 添加自定义食物</h3>
+                    <button class="modal-close" id="closeCustomModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="customFoodForm">
+                        <div class="form-group">
+                            <label for="customFoodName">食物名称：</label>
+                            <input type="text" id="customFoodName" placeholder="输入你想要的食物..." maxlength="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customFoodCategory">适合时段：</label>
+                            <select id="customFoodCategory">
+                                <option value="breakfast">早餐</option>
+                                <option value="lunch">午餐</option>
+                                <option value="dinner">晚餐</option>
+                                <option value="snacks">夜宵/零食</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">添加</button>
+                            <button type="button" class="cancel-btn" id="cancelCustomFood">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
+
+        <footer class="app-footer">
+            <p>🌟 让选择变得简单，让用餐变得有趣 🌟</p>
+        </footer>
+    </div>
+
+    <!-- 加载提示 -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>正在为你挑选美食...</p>
+    </div>
+
+    <!-- JavaScript 文件 -->
+    <script src="scripts/foodData.js"></script>
+    <script src="scripts/timeManager.js"></script>
+    <script src="scripts/lottery.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html> 
